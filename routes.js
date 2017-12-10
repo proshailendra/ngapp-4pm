@@ -24,7 +24,7 @@ router.post('/paymentstatus', function (req, res) { //payment staus from payment
         transactionId: objPayment.txnid,
         createdDate: new Date()
     };
-    request.post('https://angular-8am.firebaseio.com' + '/transactions.json').form(JSON.stringify(obj)).on('response', function (response) {
+    request.post('https://angular4pm.firebaseio.com' + '/transactions.json').form(JSON.stringify(obj)).on('response', function (response) {
         if (response.statusCode === 200) {
             req.session.receipt = receiptObj;
             res.redirect('/receipt');
